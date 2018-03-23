@@ -1,0 +1,31 @@
+{
+  "name": "zadanie-15-7",
+  "version": "1.0.0",
+  "description": "babel konfiguracja",
+  "main": "\u001b[D\u001b[D\u001b[D\u001bscript.js)",
+  "dependencies": {
+    "babel-preset-react": "^6.24.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "http-server": "^0.11.1",
+    "npm-run-all": "^4.1.2"
+  },
+  "scripts": {
+    "start:babel": "babel script.js --watch --out-file script-compiled.js",
+    "start:http": "http-server",      
+    "start": npm-run-all start:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/annaperkowska/zadanie-12-6.git"
+  },
+  "keywords": [
+    "babel",
+    "konfiguracja"
+  ],
+  "author": "annaperkowska",
+  "license": "ISC"
+}

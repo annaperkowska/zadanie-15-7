@@ -1,0 +1,10 @@
+* {
+	box box-sizing: border-box;
+}
+body {
+	background: #CCC;
+}
+.stopwatch {
+	padding: 30px;
+	margin: 30px;
+}
