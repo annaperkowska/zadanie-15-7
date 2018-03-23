@@ -14,9 +14,8 @@
     "npm-run-all": "^4.1.2"
   },
   "scripts": {
-    "start:babel": "babel script.js --watch --out-file script-compiled.js",
-    "start:http": "http-server",      
-    "start": npm-run-all start:*"
+    "build": "babel script.js --watch --out-file script-compiled.js",
+    "start": "http-server"
   },
   "repository": {
     "type": "git",
