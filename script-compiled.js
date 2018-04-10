@@ -1,4 +1,5 @@
 
+const single = document.createElement('li', { id: 'singleResult' });
 class Stopwatch extends React.Component {
 	constructor(display) {
 		super(display);
@@ -69,6 +70,10 @@ class Stopwatch extends React.Component {
 	stop() {
 		this.state.running = false;
 		clearInterval(this.watch);
+		const table = document.getElementById('results');
+
+		single.innerText += this.format(this.state.times);
+		table.appendChild(single);
 	}
 
 	pad0(value) {
@@ -88,8 +93,13 @@ class Stopwatch extends React.Component {
 		this.state.display.innerText = this.format(this.state.times);
 	}
 
+	resetAllTimes() {
+		single.innerText = " ";
+		this.reset();
+	}
+
 	render() {
-		return React.createElement('div', {}, React.createElement('div', { className: 'buttons' }, React.createElement('button', { onClick: () => this.start() }, 'start'), React.createElement('button', { onClick: () => this.stop() }, 'stop'), React.createElement('button', { onClick: () => this.reset() }, 'reset')), React.createElement('div', { id: 'stopwatch' }, this.format()));
+		return React.createElement('div', {}, React.createElement('div', { className: 'buttons' }, React.createElement('button', { onClick: () => this.start() }, 'start'), React.createElement('button', { onClick: () => this.stop() }, 'stop'), React.createElement('button', { onClick: () => this.reset() }, 'reset'), React.createElement('button', { onClick: () => this.resetAllTimes() }, 'clear')), React.createElement('div', { id: 'stopwatch' }, this.format()), React.createElement('ul', { id: 'results' }, 'Results:'));
 	}
 }
 
